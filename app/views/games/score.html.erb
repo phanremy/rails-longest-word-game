@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1>Result</h1>
+
+  <% if @true_if_matching_letters == false %>
+    <p>Sorry but <strong><%=  @answer %></strong> can't be built out of <%= @collected_letters %>
+  <% elsif @result["found"] == false%>
+    <p>Sorry but <strong><%=  @answer %></strong> does not seem to be a valid English word</p>
+  <% else %>
+    <p><strong>Congratulations!</strong> <%=  @answer %> is a valid English word</p>
+  <% end %>
+
+</div>
+
+<h2>Your Score: <%= @score %></h2>
+
+<%= link_to "New Game", new_path %>
